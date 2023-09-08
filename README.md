@@ -1,2 +1,24 @@
-# frugalcafe-test-openlist
-Testando perfomance de List&lt;T>
+# Preparando massa de dados para estudos de PL/SQL e Performance em .netcore e .netframework
+	- ADO.NET
+# Criação de tabela.
+  # Banco de dados oracle 11g XE
+
+	CREATE TABLE T_PESSOA 
+	(
+	  ID_PESSOA NUMBER,
+	  NOME VARCHAR2(50 BYTE),
+	  ESTADO VARCHAR2(2 BYTE),
+	  SEXO CHAR(1 BYTE),
+	  CONSTRAINT PK_T_PESSOA PRIMARY KEY (ID_PESSOA)
+	);
+
+	CREATE SEQUENCE T_PESSOA_SQ START WITH 1 INCREMENT BY 1;
+
+
+	CREATE OR REPLACE TRIGGER T_PESSOA_TRIGGER
+	BEFORE INSERT ON T_PESSOA
+	FOR EACH ROW
+	BEGIN
+	  SELECT T_PESSOA_SQ.NEXTVAL INTO :NEW.ID_PESSOA FROM DUAL;
+	END;
+	/
