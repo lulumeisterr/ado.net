@@ -5,12 +5,13 @@ using System.Text.RegularExpressions;
 
 namespace br.com.logica
 {
-    public class ReadFileIBGE
+    public class ReadFileIBGE : IDisposable
     {
         private string filePath = Path.Combine(Path.Combine(Directory.GetCurrentDirectory(), "File"),"ibge-fem-10000.csv");
 
         string[] estados = { "SP", "RJ", "MG", "RS", "BA", "PR", "PE", "CE", "SC", "GO" };
         char[] sexos = { 'M', 'F' };
+
         public IEnumerable<Pessoa> ReadFile()
         {
             StreamReader? sr = null;
@@ -34,6 +35,12 @@ namespace br.com.logica
                 sr?.Dispose();
             }
         }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
     }
+
 }
 
