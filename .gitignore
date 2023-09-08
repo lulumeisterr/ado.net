@@ -1,0 +1,6 @@
+/bin
+/obj
+.vs/
+BenchmarkDotNet.Artifacts/
+.vscode/
+.DS_STORE
