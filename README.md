@@ -1,7 +1,8 @@
 # Preparando massa de dados para estudos de PL/SQL e Performance em .netcore e .netframework
 	- ADO.NET
+	- DB oracle 11g XE
 # Criação de tabela.
-  # Banco de dados oracle 11g XE
+  - Banco de dados oracle 11g XE
 
 	CREATE TABLE T_PESSOA 
 	(
