@@ -9,14 +9,16 @@ namespace frugalcafe_test_openlist.Model
     public class Pessoa
     {
         public string Nome { get; set; }
-        public string Estado { get; set; }
         public char Sexo { get; set; }
+        public Profissao Profissao { get; set; }
+        public Endereco endereco { get; set; }
 
-        public Pessoa(string nome, string estado, char sexo)
+        public Pessoa(string nome, char sexo, Endereco endereco, Profissao profissao)
         {
             Nome = nome;
-            this.Estado = estado;
             this.Sexo = sexo;
+            this.endereco = endereco;
+            Profissao = profissao;
         }
 
         public Pessoa()
